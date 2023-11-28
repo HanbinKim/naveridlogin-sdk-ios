@@ -5,11 +5,6 @@ import PackageDescription
 
 let package = Package(
     name: "naveridlogin-sdk-ios",
-    products: [
-        .library(
-            name: "naveridlogin-sdk-ios",
-            targets: ["naveridlogin-sdk-ios"]),
-    ],
     targets: [
         .target(name: "naveridlogin-sdk-ios",
                dependencies: ["NaverThirdPartyLogin"]),

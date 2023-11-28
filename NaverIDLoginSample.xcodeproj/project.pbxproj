@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		4AFA68471FA08113009A2D3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFA68461FA0810E009A2D3D /* CoreGraphics.framework */; };
 		CE3EBEA7289B9F78005D49F3 /* NaverThirdPartyLogin.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3EBEA6289B9F78005D49F3 /* NaverThirdPartyLogin.xcframework */; };
 		CE3EBEA8289B9F78005D49F3 /* NaverThirdPartyLogin.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE3EBEA6289B9F78005D49F3 /* NaverThirdPartyLogin.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE5EE2582B15DCB300D3ECDC /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5EE2572B15DCB300D3ECDC /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +53,9 @@
 		4AFA68421FA080EB009A2D3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4AFA68441FA080F9009A2D3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4AFA68461FA0810E009A2D3D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CE3EBEA6289B9F78005D49F3 /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
+		CE3EBEA6289B9F78005D49F3 /* NaverThirdPartyLogin.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:U6VV7FMD97:NHN Corporation"; lastKnownFileType = wrapper.xcframework; path = NaverThirdPartyLogin.xcframework; sourceTree = "<group>"; };
+		CE5EE2562B15DCB300D3ECDC /* NaverIDLoginSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NaverIDLoginSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE5EE2572B15DCB300D3ECDC /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 		4AFA68171FA07F59009A2D3D /* NaverIDLoginSample */ = {
 			isa = PBXGroup;
 			children = (
+				CE5EE2572B15DCB300D3ECDC /* Package.swift */,
 				4AD673EC1FA1CA3C005E691D /* Info.plist */,
 				4AD673E31FA1C9F0005E691D /* NaverOAuthSampleAppDelegate.h */,
 				4AD673E41FA1C9F0005E691D /* NaverOAuthSampleAppDelegate.m */,
@@ -101,6 +105,7 @@
 				4AD673E81FA1C9F0005E691D /* SampleOAuthViewController.m */,
 				4AFA68351FA08075009A2D3D /* main.m */,
 				4AFA68391FA0807C009A2D3D /* Resource */,
+				CE5EE2562B15DCB300D3ECDC /* NaverIDLoginSample-Bridging-Header.h */,
 			);
 			path = NaverIDLoginSample;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				TargetAttributes = {
 					4AFA68141FA07F59009A2D3D = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 1500;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -190,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AD673EB1FA1C9F0005E691D /* SampleOAuthViewController.m in Sources */,
+				CE5EE2582B15DCB300D3ECDC /* Package.swift in Sources */,
 				4AFA68381FA08075009A2D3D /* main.m in Sources */,
 				4AD673E91FA1C9F0005E691D /* NaverOAuthSampleAppDelegate.m in Sources */,
 				4AD673EA1FA1C9F0005E691D /* SampleOAuthView.m in Sources */,
@@ -307,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,6 +328,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.NaverIDLoginSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NaverIDLoginSample/NaverIDLoginSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -328,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +353,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.navercorp.NaverIDLoginSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NaverIDLoginSample/NaverIDLoginSample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -11,8 +11,8 @@ let package = Package(
             targets: ["naveridlogin-sdk-ios"]),
     ],
     targets: [
-        .target(
-            name: "naveridlogin-sdk-ios"),
+        .target(name: "naveridlogin-sdk-ios",
+               dependencies: ["NaverThirdPartyLogin"]),
         .binaryTarget(name: "NaverThirdPartyLogin", path: "NaverThirdPartyLogin.xcframework")
     ]
 )
